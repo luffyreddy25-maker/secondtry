@@ -10,7 +10,7 @@ annotation PBI_QueryOrder = ["DirectLake - hekhfkj"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb"]
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","DevMode","RemoteModeling"]
 
 ref table dimension_employee
 ref table dimension_date

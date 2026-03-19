@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "c1b7e08dcfdc941ec002",
+  "position": {
+    "x": 10.078740157480315,
+    "y": 20.15748031496063,
+    "z": 0,
+    "height": 505.61679790026244,
+    "width": 641.67979002624668,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_employee"
+                    }
+                  },
+                  "Property": "IsSalesperson"
+                }
+              },
+              "queryRef": "dimension_employee.IsSalesperson",
+              "nativeQueryRef": "IsSalesperson",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dimension_employee"
+                        }
+                      },
+                      "Property": "EmployeeKey"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(dimension_employee.EmployeeKey)",
+              "nativeQueryRef": "Count of EmployeeKey"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "dimension_employee"
+                      }
+                    },
+                    "Property": "EmployeeKey"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2b4b43f5af3a0bc86245",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dimension_employee"
+                  }
+                },
+                "Property": "EmployeeKey"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3801f6134c1e8525e067",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimension_employee"
+              }
+            },
+            "Property": "IsSalesperson"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
