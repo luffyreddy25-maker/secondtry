@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "62c1c8048615a719b15d",
+  "position": {
+    "x": 10,
+    "y": 536,
+    "z": 1,
+    "height": 184,
+    "width": 642,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_employee"
+                    }
+                  },
+                  "Property": "IsSalesperson"
+                }
+              },
+              "queryRef": "dimension_employee.IsSalesperson",
+              "nativeQueryRef": "IsSalesperson"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dimension_employee"
+                        }
+                      },
+                      "Property": "LineageKey"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(dimension_employee.LineageKey)",
+              "nativeQueryRef": "Count of LineageKey"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3d4dd462ecaaf035f6ba",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimension_employee"
+              }
+            },
+            "Property": "IsSalesperson"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9a9d21fa2014bc94fc06",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dimension_employee"
+                  }
+                },
+                "Property": "LineageKey"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
